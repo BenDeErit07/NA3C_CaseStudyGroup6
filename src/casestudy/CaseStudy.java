@@ -1,8 +1,10 @@
 
 package casestudy;
-
+import static java.lang.System.out;
+import java.util.Scanner;
 public class CaseStudy {
-       public void integers(){
+
+public void integers(){
         int c;
         for (c=1;c<=5;c++){
             System.out.println(c);
@@ -16,6 +18,7 @@ public class CaseStudy {
             System.out.println("A Reverse Order:"+d);
         }
     }
+   
     public void Leader(){
         int a;
         System.out.println("Hi, I'm Brenden Aguilar");
@@ -23,37 +26,50 @@ public class CaseStudy {
             
         
     }
-    public void member1(){
-        int b;
-        System.out.println("I'm Angelica Guitierrez");
-        System.out.println("From San Miguel Tarlac City");
-           System.out.println("Part of this group");
-           System.out.println("\n");
-           System.out.println("This is our simple program");
-        
-    
-    }
-     public void member2(){
-        int j;
-        
-        System.out.println("End of our Program");
-    
-    }
-    public static void main(String[] args) {
-         CaseStudy objint = new CaseStudy();
+  public static void main(String[] args) {
+     CaseStudy objint = new CaseStudy();
         
         objint.Leader();
            System.out.println("\n");
-        objint.member1();
-           System.out.println("\n");
+ 
         objint.integers();
         objint.Reverseorder();
-   
+       
+        
+        System.out.println("\n");
         
         System.out.println("Task i complete!");
-        System.out.println("\n");
-        objint.member2();
         
+         Scanner sc = new Scanner(System.in);
+        System.out.println("Input two digit or more to see DIAMON:");
+        int row = sc.nextInt();
+        sc.close();
+        CaseStudy d = new CaseStudy();
+        d.upperDiamond(row);
+        d.lowerDiamond(row - 2);
     }
-    
+
+    public void upperDiamond(int a) {
+        for (int i = 0; i < a; i++) {
+            for (int j = a - 1; j > i; j--)
+                System.out.print(" ");
+            for (int k = 0; k < 2 * i - 1; k++)
+                System.out.print("*");
+            System.out.print("\n");
+        }
+    }
+
+    public void lowerDiamond(int b) {
+        for (int i = 0; i < b; i++) {
+            for (int j = 0; j <= i; j++)
+                System.out.print(" ");
+            for (int k = 0; k < 2 * (b - i) - 1; k++)
+                System.out.print("*");
+            System.out.print("\n");
+            
+            
+        }
+        System.out.println("End of the Program");
+    }
 }
+    
